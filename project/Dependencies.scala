@@ -3,12 +3,12 @@ import sbt._
 object Dependencies {
 
   object Versions {
-    val circeV        = "0.10.0"
+    val circeV        = "0.10.1"
     val catsV         = "1.4.0"
     val bouncyCastleV = "1.60"
     val sCryptV       = "1.4.0"
     val scalaTestV    = "3.0.5"
-    val http4sV       = "0.19.0-M4"
+    val http4sV       = "0.20.0-M3"
     val scalacheckV   = "1.14.0"
     val commonsCodecV = "1.11"
     val fs2Version    = "1.0.0"
