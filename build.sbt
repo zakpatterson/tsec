@@ -8,17 +8,11 @@ lazy val contributors = List(
   "ChristopherDavenport" -> "Christopher Davenport"
 )
 
-inThisBuild(
+lazy val releaseSettings = {
+  import ReleaseTransformations._
   Seq(
-    organization := "io.github.jmcardon",
-    developers := contributors.map {
-      case (github, name) => Developer(
-        github,
-        name,
-        "",
-        url("http://github.com/$github")
-      )
-    },
+    publishArtifact in Test := false,
+    releasePublishArtifactsAction := PgpKeys.publishSigned.value,
     scmInfo := Some(
       ScmInfo(
         url("https://github.com/jmcardon/tsec"),
@@ -84,6 +78,7 @@ lazy val commonSettings = Seq(
     Libraries.commonsCodec,
     Libraries.fs2IO
   ),
+  organization in ThisBuild := "io.github.jmcardon",
   crossScalaVersions := Seq("2.13.1", "2.12.10"),
   fork in test := true,
   fork in run := true,
