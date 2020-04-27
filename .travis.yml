@@ -16,10 +16,6 @@ before_install:
 scala_212: &scala_212 2.12.10
 scala_213: &scala_213 2.13.1
 
-scala:
-  - &scala_212
-  - &scala_213
-
 before_cache:
   - find $HOME/.sbt -name "*.lock" -type f -delete
   - find $HOME/.ivy2/cache -name "ivydata-*.properties" -type f -delete
