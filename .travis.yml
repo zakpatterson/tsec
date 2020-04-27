@@ -73,5 +73,5 @@ jobs:
         on:
           branch: master
     - stage: release
-      script: sbt ci-release
-
+      # allow deploy organization to be overridden by environment variable:
+      script: sbt "set organization in ThisBuild := \"${DEPLOY_ORG:-io.github.jmcardon}\"; ci-release"
