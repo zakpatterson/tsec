@@ -1,24 +1,18 @@
-```
-________________________________________  
-\__    ___/   _____/\_   _____/\_   ___ \ 
-  |    |  \_____  \  |    __)_ /    \  \/ 
-  |    |  /        \ |        \\     \____
-  |____| /_______  //_______  / \______  /
-                 \/         \/         \/ 
-```
 # [TSEC: A type-safe, functional, general purpose security and cryptography library.](https://jmcardon.github.io/tsec/)
+
+This fork just holds some changes that I needed for my deployments for now, you should go to the root project.
 
 [![Join the chat at https://gitter.im/tsecc/Lobby](https://badges.gitter.im/tsecc/Lobby.svg)](https://gitter.im/tsecc/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/jmcardon/tsec.svg?branch=master)](https://travis-ci.org/jmcardon/tsec)
 [ ![Latest Version](https://maven-badges.herokuapp.com/maven-central/io.github.jmcardon/tsec-common_2.12/badge.svg)](https://search.maven.org/#search%7Cga%7C1%7Cg%3A"io.github.jmcardon"%20tsec)
 
 
-### Latest Release: 0.0.1-M11
+### Latest Release: 0.2.0.1
 
 For the current progress, please refer to the [RoadMap](https://github.com/jmcardon/tsec/wiki)
 
 For version changes and additions, including breaking changes, see either [release notes](https://github.com/jmcardon/tsec/releases)
-or the [Version Changes](https://github.com/jmcardon/tsec/wiki/Version-Changes) page.
+or the [Version Changes](https://github.com/jmcardon/tsec/wiki/Version-Changes) page, or the [CHANGELOG](https://github.com/clovellytech/tsec/) for this fork
 
 ## Note about using Windows￼™® with tsec
 
@@ -30,19 +24,16 @@ Feel free to fork the project and add your own windows support.
 ### Note on milestones:
 Our Notation for versions is:
 ```
-X.X.X
+X.X.X.X
+      ^__Fork appendage (includes all features of major/minor from upstream)
 ^ ^ ^____Minor
 | |______Major
-|________Complete redesign (i.e scalaz 7 vs 8)  
+|________Complete redesign   
 ```
 
 All `x.x.x-Mx` releases are milestone releases. Thus, we do not guarantee binary compatibility or no api-breakage until
 a concrete version(i.e `0.0.1`). We aim to keep userland-apis relatively stable, but 
 internals shift as we find better/more performant abstractions.
-
-We will guarantee compatibility between minor versions (i.e 0.0.1 => 0.0.2) but not major versions (0.0.1 => 0.1.0)
-
-0.0.1-M11 is here for scala 2.12+ and Cats 1.0.1!
 
 To get started, if you are on sbt 0.13.16+, add
 
@@ -65,21 +56,21 @@ To get started, if you are on sbt 0.13.16+, add
 To include any of these packages in your project use:
 
 ```scala
-val tsecV = "0.0.1-M11"
- libraryDependencies ++= Seq(
- "io.github.jmcardon" %% "tsec-common" % tsecV,
- "io.github.jmcardon" %% "tsec-password" % tsecV,
- "io.github.jmcardon" %% "tsec-cipher-jca" % tsecV,
- "io.github.jmcardon" %% "tsec-cipher-bouncy" % tsecV,
- "io.github.jmcardon" %% "tsec-mac" % tsecV,
- "io.github.jmcardon" %% "tsec-signatures" % tsecV,
- "io.github.jmcardon" %% "tsec-hash-jca" % tsecV,
- "io.github.jmcardon" %% "tsec-hash-bouncy" % tsecV,
- "io.github.jmcardon" %% "tsec-libsodium" % tsecV,
- "io.github.jmcardon" %% "tsec-jwt-mac" % tsecV,
- "io.github.jmcardon" %% "tsec-jwt-sig" % tsecV,
- "io.github.jmcardon" %% "tsec-http4s" % tsecV
-)
+val tsecV = "0.2.0.1"
+libraryDependencies ++= Seq(
+    "tsec-common",
+    "tsec-password",
+    "tsec-cipher-jca",
+    "tsec-cipher-bouncy",
+    "tsec-mac",
+    "tsec-signatures",
+    "tsec-hash-jca",
+    "tsec-hash-bouncy",
+    "tsec-libsodium",
+    "tsec-jwt-mac",
+    "tsec-jwt-sig",
+    "tsec-http4,
+).map("com.clovellytech % _ % tsecV)
 ```
 
 ## Note on contributing

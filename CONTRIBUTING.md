@@ -1,5 +1,3 @@
 ## Contributing to tsec
 
-Do!
-
-We appreciate all past contributions to the project and continue to support new contributions.
+I am maintaining this fork mostly for my personal needs. You should contribute to the root project
