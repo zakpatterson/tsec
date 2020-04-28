@@ -6,12 +6,11 @@ A type-safe, functional, general purpose security and cryptography library.
 This fork just holds some changes that I needed for my deployments for now, you should go to the root project.
 
 
-### Latest Release: 0.2.0.1
+### Latest Release: 0.2.0.2
 
 For the current progress, please refer to the [RoadMap](https://github.com/jmcardon/tsec/wiki)
 
-For version changes and additions, including breaking changes, see either [release notes](https://github.com/jmcardon/tsec/releases)
-or the [Version Changes](https://github.com/jmcardon/tsec/wiki/Version-Changes) page, or the [CHANGELOG](https://github.com/clovellytech/tsec/) for this fork
+For version changes and additions, including breaking changes, see either [release notes](https://github.com/jmcardon/tsec/releases) or the [Version Changes](https://github.com/jmcardon/tsec/wiki/Version-Changes) page, or the [CHANGELOG](https://github.com/clovellytech/tsec/) for this fork
 
 ### Versions:
 Our Notation for versions is:
