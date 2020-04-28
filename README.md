@@ -1,10 +1,9 @@
-# [TSEC: A type-safe, functional, general purpose security and cryptography library.](https://jmcardon.github.io/tsec/)
+# [tsec](https://jmcardon.github.io/tsec/) [![Build Status][travis-badge]][travis-url] [![Sonatype Release][sonatype-badge]][sonatype-url] [![Join the chat at https://gitter.im/tsecc/Lobby](https://badges.gitter.im/tsecc/Lobby.svg)](https://gitter.im/tsecc/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+
+A type-safe, functional, general purpose security and cryptography library.
 
 This fork just holds some changes that I needed for my deployments for now, you should go to the root project.
-
-[![Join the chat at https://gitter.im/tsecc/Lobby](https://badges.gitter.im/tsecc/Lobby.svg)](https://gitter.im/tsecc/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Build Status](https://travis-ci.org/jmcardon/tsec.svg?branch=master)](https://travis-ci.org/jmcardon/tsec)
-[ ![Latest Version](https://maven-badges.herokuapp.com/maven-central/io.github.jmcardon/tsec-common_2.12/badge.svg)](https://search.maven.org/#search%7Cga%7C1%7Cg%3A"io.github.jmcardon"%20tsec)
 
 
 ### Latest Release: 0.2.0.1
@@ -14,14 +13,7 @@ For the current progress, please refer to the [RoadMap](https://github.com/jmcar
 For version changes and additions, including breaking changes, see either [release notes](https://github.com/jmcardon/tsec/releases)
 or the [Version Changes](https://github.com/jmcardon/tsec/wiki/Version-Changes) page, or the [CHANGELOG](https://github.com/clovellytech/tsec/) for this fork
 
-## Note about using Windows￼™® with tsec
-
-Windows™® is not supported.
-
-Feel free to fork the project and add your own windows support.
-
-
-### Note on milestones:
+### Versions:
 Our Notation for versions is:
 ```
 X.X.X.X
@@ -98,3 +90,9 @@ _binding_ to your classpath. Check https://www.slf4j.org/codes.html#StaticLogger
 
 [Will Sargent](https://github.com/wsargent) (Security Discussions)
 
+
+
+[travis-badge]: https://travis-ci.com/clovellytech/tsec.svg?branch=master "Build Status"
+[travis-url]: https://travis-ci.com/clovellytech/tsec "Build Status"
+[sonatype-badge]: https://img.shields.io/nexus/r/com.clovellytech/tsec-bouncy_2.13.svg?server=https://oss.sonatype.org "Sonatype Releases"
+[sonatype-url]: https://oss.sonatype.org/content/groups/public/com/clovellytech/ "Sonatype Releases"
