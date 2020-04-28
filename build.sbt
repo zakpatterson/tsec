@@ -9,10 +9,8 @@ lazy val contributors = List(
 )
 
 lazy val releaseSettings = {
-  import ReleaseTransformations._
   Seq(
     publishArtifact in Test := false,
-    releasePublishArtifactsAction := PgpKeys.publishSigned.value,
     scmInfo := Some(
       ScmInfo(
         url("https://github.com/jmcardon/tsec"),
@@ -20,7 +18,10 @@ lazy val releaseSettings = {
       )
     ),
     homepage := Some(url("https://github.com/jmcardon/tsec")),
-    licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
+    licenses += ("MIT", url("http://opensource.org/licenses/MIT")),
+    developers := contributors.map{
+      case (github, name) => Developer(github, name, "", url(s"https://github.com/$github"))
+    }
   )
 }
 

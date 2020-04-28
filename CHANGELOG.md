@@ -3,7 +3,7 @@ Changelog
 
 ## vNext (upstream v__)
 
-## v0.2.0.1 (upstream v0.2.0)
+## v0.2.0.2 (upstream v0.2.0)
 
 * Updated to publish to sonatype with jdk 8 ([PR #1][PR1], [upstream PR #299][UPR299])
 
