@@ -22,15 +22,7 @@ lazy val releaseSettings = {
     homepage := Some(url("https://github.com/jmcardon/tsec")),
     licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
   )
-)
-
-lazy val releaseSettings = Seq(
-  publishMavenStyle := true,
-  pomIncludeRepository := { _ =>
-    false
-  },
-  publishArtifact in Test := false,
-)
+}
 
 
 lazy val micrositeSettings = Seq(
