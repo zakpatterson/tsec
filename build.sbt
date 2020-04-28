@@ -1,6 +1,6 @@
 import Dependencies._
 
-lazy val contributors = Seq(
+lazy val contributors = List(
   "jmcardon"             -> "Jose Cardona",
   "rsoeldner"            -> "Robert Soeldner",
   "hrhino"               -> "Harrison Houghton",
@@ -8,12 +8,17 @@ lazy val contributors = Seq(
   "ChristopherDavenport" -> "Christopher Davenport"
 )
 
-
-lazy val releaseSettings = {
-  import ReleaseTransformations._
+inThisBuild(
   Seq(
-    publishArtifact in Test := false,
-    releasePublishArtifactsAction := PgpKeys.publishSigned.value,
+    organization := "io.github.jmcardon",
+    developers := contributors.map {
+      case (github, name) => Developer(
+        github,
+        name,
+        "",
+        url("http://github.com/$github")
+      )
+    },
     scmInfo := Some(
       ScmInfo(
         url("https://github.com/jmcardon/tsec"),
@@ -21,24 +26,18 @@ lazy val releaseSettings = {
       )
     ),
     homepage := Some(url("https://github.com/jmcardon/tsec")),
-    licenses += ("MIT", url("http://opensource.org/licenses/MIT")),
-    publishMavenStyle := true,
-    pomIncludeRepository := { _ =>
-      false
-    },
-    pomExtra := {
-      <developers>
-        {for ((username, name) <- contributors) yield
-        <developer>
-          <id>{username}</id>
-          <name>{name}</name>
-          <url>http://github.com/{username}</url>
-        </developer>
-        }
-      </developers>
-    }
+    licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
   )
-}
+)
+
+lazy val releaseSettings = Seq(
+  publishMavenStyle := true,
+  pomIncludeRepository := { _ =>
+    false
+  },
+  publishArtifact in Test := false,
+)
+
 
 lazy val micrositeSettings = Seq(
   micrositeName := "TSec",
@@ -85,7 +84,6 @@ lazy val commonSettings = Seq(
     Libraries.commonsCodec,
     Libraries.fs2IO
   ),
-  organization in ThisBuild := "io.github.jmcardon",
   crossScalaVersions := Seq("2.13.1", "2.12.10"),
   fork in test := true,
   fork in run := true,
@@ -98,7 +96,7 @@ lazy val commonSettings = Seq(
   addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.11.0" cross CrossVersion.full),
   addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1"),
   scalacOptions ++= scalacOptionsForVersion(scalaVersion.value)
-)
+) ++ releaseSettings
 
 lazy val passwordHasherLibs = libraryDependencies ++= Seq(
   Libraries.sCrypt
